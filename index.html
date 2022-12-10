@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Countdown Timer</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"?
+        <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+        <style>
+            *{margin: 0; padding: 0; font-family: 'Nunito', sans-serif;}
+
+            div{
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background-image: linear-gradient(#00c3ff, #ffff1c);
+            }
+
+            p{
+                height: 100px;
+                width: 600px;
+                background-image: linear-gradient(#16bffd, #cb3066);
+                color: white;
+                line-height: 100px;
+                text-align: center;
+                font-size: 60px;
+                box-shadow: 1px 1px 0px #000,
+                2px 2px 0px #000
+                3px 3px 0px #000
+                4px 4px 0px #000
+                5px 5px 0px #000
+                6px 6px 0px #000;
+            }
+        </style>
+    </head>
+    <body>
+        <DIV>
+            <h1>COUNTDOWN BEGINS</h1>
+            <p id="the countdown"></p>
+        </DIV>
+
+        <script>
+            var dest = new Date("dec 17, 2022 10:00:00").getTime();
+            var x = setInterval(function() {
+            var now = new Date().getTime();
+            var diff = dest-now;
+            var days = Math.floor(diff/86400000);
+            console.log(days);
+            var hours = Math.floor((diff % 86400000) / 3600000);
+            console.log(hours);
+            var minutes = Math.floor((diff % 3600000) / 60000);
+            console.log(minutes);
+            var seconds = Math.floor((diff % 60000) / 1000);
+            console.log(seconds);
+            document.getElementById("the countdown").innerHTML=days + "d, " + hours + "hrs: " + minutes + "m: " + seconds + "s";
+            }, 1000);
+        </script>
+    </body>
+</html>
